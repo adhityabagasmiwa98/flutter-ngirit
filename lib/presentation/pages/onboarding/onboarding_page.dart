@@ -59,8 +59,8 @@ class _OnboardingPageState extends State<OnboardingPage> {
                     assetName: _controller.slides[index].assetName,
                     description: _controller.slides[index].description,
                     subDescription: _controller.slides[index].subDescription,
-                    onPressSkip: () => {},
-                    onPressedButton: () => {},
+                    onPressSkip: () => {}, /// TODO: Add function on press skip button
+                    onPressedButton: () => {}, /// TODO: Add function on press start button
                     isShowLoginButton: _controller.currentIndex ==
                         (_controller.slides.length - 1),
                     isShowSkipButton: _controller.currentIndex !=

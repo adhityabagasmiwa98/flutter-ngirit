@@ -24,22 +24,20 @@ class _SplashScreenPageState extends State<SplashScreenPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Container(
-          decoration: const BoxDecoration(
-            gradient: LinearGradient(
-              begin: Alignment.topCenter,
-              end: Alignment.bottomCenter,
-              stops: [0.0, 1.0],
-              colors: [
-                colorPrimary,
-                darkBlue,
-              ],
-            ),
+      body: Container(
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            stops: [0.0, 1.0],
+            colors: [
+              colorPrimary,
+              darkBlue,
+            ],
           ),
-          child: Center(
-            child: Image.asset('${AppStrings.imagePath}img_app_logo.png'),
-          ),
+        ),
+        child: Center(
+          child: Image.asset('${AppStrings.imagePath}img_app_logo.png'),
         ),
       ),
     );
