@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ngirit/domain/onboarding_domain.dart';
+import 'package:flutter_ngirit/presentation/pages/login/login_page.dart';
 
 class OnboardingController {
   late PageController _pageController;
@@ -17,5 +18,13 @@ class OnboardingController {
 
   void setPageController(int initalPage) {
     _pageController = PageController(initialPage: initalPage);
+  }
+
+  void navigateToLogin(BuildContext context) {
+    Navigator.of(context).pushReplacement(
+      MaterialPageRoute(
+        builder: (context) => const LoginPage(),
+      ),
+    );
   }
 }
