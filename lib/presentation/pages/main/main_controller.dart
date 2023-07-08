@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ngirit/presentation/pages/form_screen/form_screen_page.dart';
 import 'package:flutter_ngirit/presentation/pages/home/home_page.dart';
 
 class MainController {
@@ -16,10 +17,7 @@ class MainController {
 
   final List<Widget> bodyView = const <Widget>[
     HomePage(),
-    Text(
-      'Index 1: Business',
-      style: optionStyle,
-    ),
+    FormScreenPage(),
     Text(
       'Index 2: School',
       style: optionStyle,
