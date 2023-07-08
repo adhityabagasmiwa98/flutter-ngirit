@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ngirit/presentation/misc/app_colors.dart';
+import 'package:flutter_ngirit/presentation/pages/form_screen/form_screen_page.dart';
 import 'package:flutter_ngirit/presentation/pages/splash_screen/splash_screen_page.dart';
 
 void main() {
@@ -16,9 +17,9 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: colorPrimary),
-        useMaterial3: true,
+        useMaterial3: false,
       ),
-      home: const SplashScreenPage(),
+      home: const FormScreenPage(),
     );
   }
 }
