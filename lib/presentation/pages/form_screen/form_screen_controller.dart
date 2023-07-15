@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class FormScreenController {
+class FormScreenController extends ChangeNotifier {
   bool _nominalValid = false,
       _categoryValid = false,
       _dateValid = false,
@@ -30,20 +30,24 @@ class FormScreenController {
 
   void validateNominal() {
     _nominalValid = _nominalTextController.text.isNotEmpty;
+    notifyListeners();
   }
 
   void validateCategory(String value) {
     _categoryValid = value.isNotEmpty;
     _categoryValue = value;
+    notifyListeners();
   }
 
   void validateDate(String value) {
     _dateValid = value.isNotEmpty;
     _dateValue = value;
+    notifyListeners();
   }
 
   void validateDescription() {
     _descriptionValid = _descriptionTextController.text.isNotEmpty;
+    notifyListeners();
   }
 
   void handleSubmitButton() {
