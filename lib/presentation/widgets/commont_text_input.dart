@@ -45,7 +45,7 @@ class CommonTextInput extends StatelessWidget {
           controller: controller,
           onChanged: onChanged,
           keyboardType:
-              (isNumber ?? false) ? TextInputType.number : TextInputType.none,
+              (isNumber ?? false) ? TextInputType.number : TextInputType.text,
           inputFormatters: (isNumber ?? false)
               ? [FilteringTextInputFormatter.digitsOnly]
               : [],
