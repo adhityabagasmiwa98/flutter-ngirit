@@ -52,7 +52,7 @@ class FormScreenController extends ChangeNotifier {
     notifyListeners();
   }
 
-  void handleSubmitButton() {
+  Future<void> handleSubmitButton() async {
     int amount = int.tryParse(nominalTextController.text) ?? 0;
 
     TransactionDomain transaction = TransactionDomain(

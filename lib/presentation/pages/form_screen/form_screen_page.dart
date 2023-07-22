@@ -88,7 +88,27 @@ class _FormScreenPageState extends State<FormScreenPage> {
                       textColor: Colors.white,
                       backgroundColor: lightBlue,
                       onPressed: () {
-                        _controller.handleSubmitButton();
+                        _controller.handleSubmitButton().then((value) {
+                          showDialog(
+                            context: context,
+                            builder: (BuildContext context) {
+                              return const CommonModal(
+                                image: '${AppStrings.imagePath}img_success.png',
+                                message: 'Transaksi  Berhasil Tersimpan',
+                              );
+                            },
+                          );
+                        }).onError((error, stackTrace) {
+                          showDialog(
+                            context: context,
+                            builder: (BuildContext context) {
+                              return const CommonModal(
+                                image: '${AppStrings.imagePath}img_failed.png',
+                                message: 'Transaksi Gagal Tersimpan',
+                              );
+                            },
+                          );
+                        });
                       },
                       width: 114,
                       height: 56,
