@@ -5,6 +5,7 @@ import 'package:flutter_ngirit/presentation/misc/app_sizes.dart';
 import 'package:flutter_ngirit/presentation/misc/app_strings.dart';
 import 'package:flutter_ngirit/presentation/misc/app_styles.dart';
 import 'package:flutter_ngirit/presentation/pages/home/home_controller.dart';
+import 'package:flutter_ngirit/presentation/widgets/item_transaction.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -112,8 +113,26 @@ class _HomePageState extends State<HomePage> {
                     "Transaksi Terakhir",
                     style: textStyleW700S18,
                   ),
-                  if (_controller.transactions.isEmpty)
-                    Column(
+                  // list transaction
+                  Visibility(
+                    visible: _controller.transactions.isNotEmpty,
+                    child: Container(
+                      height: 500,
+                      padding: const EdgeInsets.only(top: 16),
+                      child: ListView.builder(
+                        itemBuilder: (context, index) {
+                          final transaction = _controller.transactions[index];
+
+                          return ItemTransaction(transaction: transaction);
+                        },
+                        itemCount: _controller.transactions.length,
+                      ),
+                    ),
+                  ),
+                  // empty state
+                  Visibility(
+                    visible: _controller.transactions.isEmpty,
+                    child: Column(
                       children: [
                         Center(
                           child: Image.asset(
@@ -127,7 +146,8 @@ class _HomePageState extends State<HomePage> {
                           style: textStyleW700S18,
                         ),
                       ],
-                    )
+                    ),
+                  ),
                 ],
               ),
             ),

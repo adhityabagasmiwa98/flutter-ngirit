@@ -13,6 +13,7 @@ const TextStyle _textStyleW600 = TextStyle(fontWeight: FontWeight.w500);
 TextStyle textStyleW600S12 = _textStyleW600.copyWith(fontSize: AppSize.text12);
 
 const TextStyle _textStyleW700 = TextStyle(fontWeight: FontWeight.w700);
+TextStyle textStyleW700S16 = _textStyleW700.copyWith(fontSize: AppSize.text16);
 TextStyle textStyleW700S18 = _textStyleW700.copyWith(fontSize: AppSize.text18);
 TextStyle textStyleW700S24 = _textStyleW700.copyWith(fontSize: AppSize.text24);
 TextStyle textStyleW700S54 = _textStyleW700.copyWith(fontSize: AppSize.text54);

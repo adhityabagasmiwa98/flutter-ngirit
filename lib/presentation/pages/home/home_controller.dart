@@ -1,4 +1,5 @@
 import 'package:fl_chart/fl_chart.dart';
+import 'package:flutter_ngirit/domain/transaction_domain.dart';
 import 'package:flutter_ngirit/presentation/misc/app_colors.dart';
 
 class HomeController {
@@ -34,6 +35,13 @@ class HomeController {
   ];
 
   // TODO: Create struct for saving data transaction from fireStore
-  List<String> _transactions = [];
-  List<String> get transactions => _transactions;
+  final List<TransactionDomain> _transactions = [
+    TransactionDomain(
+      amount: 10000,
+      category: 'Belanja',
+      date: '20 Mei 2023',
+      notes: 'Aqua galon',
+    ),
+  ];
+  List<TransactionDomain> get transactions => _transactions;
 }

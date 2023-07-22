@@ -15,7 +15,7 @@ class MainController {
   static const TextStyle optionStyle =
       TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
 
-  final List<Widget> bodyView = const <Widget>[
+  final List<Widget> bodyView = <Widget>[
     HomePage(),
     FormScreenPage(),
     Text(

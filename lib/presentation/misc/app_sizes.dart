@@ -13,6 +13,7 @@ class AppSize {
   static const text10 = 10.0;
   static const text12 = 12.0;
   static const text18 = 18.0;
+  static const text16 = 16.0;
   static const text24 = 24.0;
   static const text54 = 54.0;
 }

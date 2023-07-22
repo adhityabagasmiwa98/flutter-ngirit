@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ngirit/domain/transaction_domain.dart';
 import 'package:flutter_ngirit/presentation/misc/app_strings.dart';
 import 'package:flutter_ngirit/presentation/pages/form_screen/form_screen_controller.dart';
 import 'package:flutter_ngirit/presentation/widgets/common_button.dart';
@@ -11,7 +12,9 @@ import 'package:provider/provider.dart';
 import '../../misc/app_colors.dart';
 
 class FormScreenPage extends StatefulWidget {
-  const FormScreenPage({super.key});
+  FormScreenPage({super.key, this.transaction});
+
+  TransactionDomain? transaction;
 
   @override
   State<FormScreenPage> createState() => _FormScreenPageState();
@@ -114,26 +117,27 @@ class _FormScreenPageState extends State<FormScreenPage> {
                       height: 56,
                       isEnabled: _controller.isBtnEnabled(),
                     ),
-
-                    /* TODO : Will Handle Later */
-                    CommonButton(
-                      text: 'Hapus',
-                      textColor: Colors.white,
-                      backgroundColor: colorRed,
-                      onPressed: () {
-                        showDialog(
-                          context: context,
-                          builder: (BuildContext context) {
-                            return const CommonModal(
-                              image: '${AppStrings.imagePath}img_success.png',
-                              message: 'Transaksi  Berhasil Tersimpan',
-                            );
-                          },
-                        );
-                      },
-                      width: 114,
-                      height: 56,
-                      isEnabled: true,
+                    Visibility(
+                      visible: widget.transaction != null,
+                      child: CommonButton(
+                        text: 'Hapus',
+                        textColor: Colors.white,
+                        backgroundColor: colorRed,
+                        onPressed: () {
+                          showDialog(
+                            context: context,
+                            builder: (BuildContext context) {
+                              return const CommonModal(
+                                image: '${AppStrings.imagePath}img_success.png',
+                                message: 'Transaksi  Berhasil Tersimpan',
+                              );
+                            },
+                          );
+                        },
+                        width: 114,
+                        height: 56,
+                        isEnabled: true,
+                      ),
                     ),
                   ],
                 ),

@@ -6,6 +6,8 @@ import 'package:flutter_ngirit/presentation/pages/form_screen/form_screen_page.d
 import 'package:flutter_ngirit/presentation/pages/splash_screen/splash_screen_page.dart';
 import 'package:provider/provider.dart';
 
+import 'presentation/pages/onboarding/onboarding_page.dart';
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
@@ -29,7 +31,7 @@ class MyApp extends StatelessWidget {
           colorScheme: ColorScheme.fromSeed(seedColor: colorPrimary),
           useMaterial3: false,
         ),
-        home: const FormScreenPage(),
+        home: const OnboardingPage(),
       ),
     );
   }

@@ -10,6 +10,8 @@ const Color darkBlack = Color.fromRGBO(217, 217, 217, 1);
 
 const Color lightBlack = Color.fromRGBO(2, 3, 3, 1);
 const Color lightBlue = Color.fromRGBO(116, 151, 255, 1);
+const Color lightGray = Color.fromRGBO(159, 159, 159, 1);
+const Color lightGreen = Color.fromRGBO(0, 187, 157, 1);
 
 const Color disabledButton = Color.fromRGBO(159, 159, 159, 1);
 
