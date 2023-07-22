@@ -1,4 +1,6 @@
+import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_ngirit/domain/transaction_domain.dart';
 
 class FormScreenController extends ChangeNotifier {
   bool _nominalValid = false,
@@ -51,11 +53,17 @@ class FormScreenController extends ChangeNotifier {
   }
 
   void handleSubmitButton() {
-    // TODO : Push to API
-    print('Nominal : ' + nominalTextController.text);
-    print('Kategori : ' + categoryValue);
-    print('Tanggal : ' + dateValue);
-    print('Keterangan : ' + descriptionTextController.text);
+    int amount = int.tryParse(nominalTextController.text) ?? 0;
+
+    TransactionDomain transaction = TransactionDomain(
+      amount: amount,
+      category: categoryValue,
+      date: dateValue,
+      notes: descriptionTextController.text,
+    );
+    DatabaseReference reference = FirebaseDatabase.instance.ref('transaction');
+    DatabaseReference transactionReference = reference.push();
+    transactionReference.set(transaction.toJson());
   }
 
   bool isBtnEnabled() {
